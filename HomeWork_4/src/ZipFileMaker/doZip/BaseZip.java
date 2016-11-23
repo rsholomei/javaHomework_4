@@ -1,6 +1,6 @@
 package ZipFileMaker.doZip;
 
-import ZipFileMaker.Directorie;
+import ZipFileMaker.Directory;
 
 import java.io.*;
 import java.util.zip.ZipEntry;
@@ -24,9 +24,9 @@ public class BaseZip {
     }
 
     private void doZip(ZipOutputStream out) throws IOException {
-        for (int i = 0; i < new Directorie().listDirectories().size(); i++)
+        for (int i = 0; i < new Directory().listDirectories().size(); i++)
         {
-            File dir = new File(new Directorie().listDirectories().get(i));
+            File dir = new File(new Directory().listDirectories().get(i));
             for (File file : dir.listFiles(fileFilter()))
             {
                 if (file.isDirectory())
